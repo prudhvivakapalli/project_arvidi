@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESG Dashboard - Dark Mode</title>
+  <style>
+    body {
+      display: flex;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+    /* Sidebar styling */
+    #sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #333;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #sidebar ul li {
+      padding: 10px;
+      background-color: #444;
+      margin-bottom: 5px;
+      cursor: pointer;
+      color: #e0e0e0;
+    }
+    #sidebar ul li:hover {
+      background-color: #555;
+    }
+    /* Main content area styling */
+    #main-content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+    .category-btn {
+      padding: 10px;
+      margin: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .category-btn:hover {
+      background-color: #0056b3;
+    }
+    /* Stats container */
+    #stats {
+      margin-top: 20px;
+      color: #e0e0e0;
+    }
+  </style>
+  <script>
+    function displayCompanyStats(company) {
+      document.getElementById('stats').innerText = 'Showing stats for ' + company;
+    }
+
+    function displayCategoryStats(category) {
+      document.getElementById('stats').innerText = 'Showing ' + category + ' stats';
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Sidebar with company names -->
+  <div id="sidebar">
+    <h3>Company Names</h3>
+    <ul>
+      <li onclick="displayCompanyStats('CleanPower Ltd')">CleanPower Ltd</li>
+      <li onclick="displayCompanyStats('EarthRenew Ltd')">EarthRenew Ltd</li>
+      <li onclick="displayCompanyStats('HydroFlow Ltd')">HydroFlow Ltd</li>
+      <li onclick="displayCompanyStats('GreenFuture Ltd')">GreenFuture Ltd</li>
+      <li onclick="displayCompanyStats('WindWorks Ltd')">WindWorks Ltd</li>
+      <li onclick="displayCompanyStats('SolarWind Ltd')">SolarWind Ltd</li>
+      <li onclick="displayCompanyStats('CarbonZero Ltd')">CarbonZero Ltd</li>
+      <li onclick="displayCompanyStats('GeoTherm Ltd')">GeoTherm Ltd</li>
+      <li onclick="displayCompanyStats('EcoTech Ltd')">EcoTech Ltd</li>
+      <li onclick="displayCompanyStats('BioEnergy Ltd')">BioEnergy Ltd</li>
+    </ul>
+  </div>
+
+  <!-- Main content area with headlines -->
+  <div id="main-content">
+    <h1>ESG Metrics Dashboard</h1>
+    <button class="category-btn" onclick="displayCategoryStats('Alviridi')">Alviridi</button>
+    <button class="category-btn" onclick="displayCategoryStats('Global Investments')">Global Investments</button>
+    <button class="category-btn" onclick="displayCategoryStats('Thematic Overview')">Thematic Overview</button>
+    <button class="category-btn" onclick="displayCategoryStats('Emissions Dashboard')">Emissions Dashboard</button>
+    
+    <!-- Stats area -->
+    <div id="stats">
+      <p>Select a company or category to view the stats here.</p>
+    </div>
+  </div>
+
+</body>
+</html>
